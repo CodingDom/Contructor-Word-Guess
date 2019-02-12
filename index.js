@@ -43,10 +43,10 @@ function startRound(list) {
         // Checking whether the round ended or not
         // Declaring victory/loss
         if (remainder <= 0) {
-            console.log("You Failed!".red + " The corerct answer was: " + colors.green(word));
+            console.log("YOU FAILED!".red + " The corerct answer was: " + colors.green(word));
             return startRound(words);
         } else if (wordObj.completed) {
-            console.log("Good Job!".green + " Word Complete..".grey);
+            console.log("GOOD JOB!".green + " Word Complete..".grey);
             return startRound(words);
         }
 
@@ -67,10 +67,10 @@ function startRound(list) {
             // Checking for correct guess
             wordObj.makeGuess(guess);
             if (prevGuess != wordObj.toString()) {
-                display("Correct".green);
+                display("CORRECT!!!".green);
             } else {
                 remainder--;
-                display("Incorrect".red);
+                display("INCORRECT!!!".red);
             };
             prevGuess = wordObj.toString();
         });
