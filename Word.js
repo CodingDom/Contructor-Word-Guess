@@ -8,8 +8,11 @@ function Word(word) {
     });
     this.makeGuess = function(guess) {
         // Comparing each letter of word to guessed letter
+        this.completed = true;
         this.letters.forEach((char) => {
-            this.completed = char.checkLetter(guess);
+            if (!char.checkLetter(guess)) {
+                this.completed = false;
+            };
         });
     };
     this.toString = function() {
