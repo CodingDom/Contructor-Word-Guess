@@ -2,10 +2,12 @@ const Letter = require("./Letter.js");
 
 function Word(word) {
     this.letters = [];
+    // Constructing objects for each letter
     word.split("").forEach((char) => {
         this.letters.push(new Letter(char));
     });
     this.makeGuess = function(guess) {
+        // Comparing each letter of word to guessed letter
         this.letters.forEach((char) => {
             this.completed = char.checkLetter(guess);
         });

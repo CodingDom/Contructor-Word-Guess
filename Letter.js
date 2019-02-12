@@ -7,9 +7,11 @@ function Letter(letter,placeholder="_") {
     const code = letter.toUpperCase().charCodeAt(0);
     if (code < 65 || code > 90) {
         this.guessed = true;
-        this.misc = true;
+        this.misc = true; // For miscellaneous
+        // Replacing whitespace with "/"
         if (letter == " ") this.letter = " / ";
     };
+    // Placeholder for unguessed letters
     this.placeholder = placeholder;
     this.updateLetter = function() {
         if (this.guessed && this.misc) {
