@@ -1,0 +1,30 @@
+{
+  "name": "cli-word-guess",
+  "version": "1.0.0",
+  "description": "Command Line Interface Word Guess Game ",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CodingDom/Contructor-Word-Guess.git"
+  },
+  "keywords": [
+    "Word",
+    "Guess",
+    "Game",
+    "Hangman",
+    "CLI"
+  ],
+  "author": "Dominic Smith",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/CodingDom/Contructor-Word-Guess/issues"
+  },
+  "homepage": "https://github.com/CodingDom/Contructor-Word-Guess#readme",
+  "dependencies": {
+    "colors": "^1.3.3",
+    "inquirer": "^6.2.2"
+  }
+}
