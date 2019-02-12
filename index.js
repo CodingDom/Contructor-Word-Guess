@@ -2,10 +2,18 @@ const inquirer = require("inquirer");
 const colors = require("colors");
 const Word = require("./Word.js");
 
-const wordBank = ["Jurassic Park", "Dinosaur", "Fish", "Whale"];
+const categories = {
+    Animals : ["Fish", "Whale", "Dog", "Cat", "Squirrel", "Iguana"],
+    Movies : ["Men In Black","Jurassic Park","Pulp Fiction", "It", "Up"],
+    Valentines : ["Cupid", "Heart", "Arrow","Chocolate"],
+};
 const maxGuesses = 6;
 
 function startRound(list) {
+    if (list.length <= 0) {
+        console.log("Completed Category!".magenta); 
+        return startGame()
+    };
     let words = list.slice(0);
     const randomIndex = Math.floor(Math.random()*words.length);
     const word = words[randomIndex];
@@ -24,7 +32,8 @@ function startRound(list) {
         console.log(msg);
 
         if (remainder <= 0) {
-            return console.log("You lose!".red + " The corerct answer was: " + colors.green(word));
+            console.log("You Failed!".red + " The corerct answer was: " + colors.green(word));
+            return startRound(words);
         } else if (wordObj.completed) {
             console.log("Good Job!".green + " Word Complete..".grey);
             return startRound(words);
@@ -56,4 +65,27 @@ function startRound(list) {
     display();
 };
 
-startRound(wordBank);
+console.log("----------------------------------".blue);
+console.log("\nWelcome to the Word Guess Game! \n".yellow);
+
+function startGame() {
+    let wordBank = Object.keys(categories);
+    wordBank.push("Exit".red);
+    inquirer.prompt([
+        {
+            type : "list",
+            name : "category",
+            message : "Select a category to begin!",
+            choices : wordBank,
+        }
+    ]).then(function(resp) {
+        const category = resp.category;
+        if (category.indexOf("Exit") != -1) {
+            return console.log("Goodbye, hope you enjoyed!".yellow);
+        } else {
+            startRound(categories[category]);
+        };
+    });
+};
+
+startGame();
