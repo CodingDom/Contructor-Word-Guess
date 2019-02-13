@@ -2,6 +2,6 @@
     "Animals" : ["Fish", "Whale", "Dog", "Cat", "Squirrel", "Iguana"],
     "Candy" : ["Snickers","Skittles","Three Musketeers","Starburts","Hershey","Kiss","Twix","York"],
     "Movies" : ["Men In Black","Jurassic Park","Pulp Fiction", "It", "Up"],
-    "Pramming Languages" : ["JavaScript","PHP","Lua","Java","Ruby","C","Swift","Objective-C"],
+    "Programming Languages" : ["JavaScript","PHP","Lua","Java","Ruby","C","Swift","Objective-C"],
     "Valentines" : ["Cupid", "Heart", "Arrow","Chocolate"]
 }
